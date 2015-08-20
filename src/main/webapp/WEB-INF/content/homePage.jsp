@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>清新源室内空气净化服务有限公司</title>
+    <%@include file="/static2/common/meta.jsp" %>
+    <%@include file="/static2/common/head-style.jsp" %>
 
 </head>
 <body>

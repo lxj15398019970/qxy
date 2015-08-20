@@ -1,0 +1,99 @@
+
+/* 显示一行  溢出显示... */
+.text-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* 显示一行 截断显示 */
+.text-clip {
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* 强制换行显示 */
+/*  word-wrap 对于长英文无解*/
+.text-wrap {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* 文字居中*/
+.text-center {
+    text-align: center;
+}
+
+.formBase{
+    border: 1px solid #CCC;
+    width: 323PX;
+}
+
+.formBase.radioBase > .radioItem{
+    background: #e6e6e6;
+    padding: 9px 70px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.radioBase .radioItem{
+    position: relative;
+}
+
+.formBase.radioBase > .radioItem.active{
+    background: #3598db;
+    color: #ffffff;
+}
+
+.selectMain{
+    height: 28px;
+}
+
+.input-prepend{
+    position: relative;
+}
+
+.alert-warn{
+    background: #fff9f1;
+    font-size: 16px;
+    color: #fe4038;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.color-ul {
+}
+
+.color-ul > li {
+    border: 1px solid #b8b7be;
+    cursor: pointer;
+    padding: 4px 25px !important;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.color-ul > li.active {
+    border: 1px solid #dd4330;
+}
+
+
+.report-base-body input[disabled]{
+    border  : 0 none !important;
+    padding-left: 0 !important;
+    background: none;
+
+}
+.active > .red-tran{
+    background-image: url("../images/global/red-tran.png");
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}

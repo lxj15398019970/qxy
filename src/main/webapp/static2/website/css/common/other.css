@@ -1,0 +1,296 @@
+/*index.html 开始*/
+.flow-img img {
+    margin: 0 auto;
+    display: block;
+}
+
+.info-img {
+    background: #55ddb4;
+}
+
+.payment-img {
+    background: #ed8f6b;
+}
+
+.dormitory-img {
+    background: #fceac6;
+}
+
+.clothing-img {
+    background: #2cb45f;
+}
+
+.life-img {
+    background: #f2f0e4;
+}
+
+.phone-img {
+    background: #c26965;
+}
+
+.classes-img {
+    background: #f9ea99;
+}
+
+.address-book-img {
+    background: #5cacd5;
+}
+
+.user-login {
+    overflow: hidden;
+    float: right;
+}
+
+.user-login .user-head {
+    float: left;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.user-login .user-head-img {
+    border: 0  none;
+    padding: 0;
+    border-radius: 100px;
+
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+    border-right: 100px;
+}
+
+.user-login .user-name {
+    float: left;
+    padding: 0  0  0 10px;
+    margin-top : 12px;
+}
+
+.user-login .user-name .t {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.user-login .user-name .z{
+    font-size: 14px;
+}
+
+
+.user-login .logout-btn {
+    background: #37b0e8;
+    border-radius: 0;
+    text-shadow: 0 0 0;
+    margin-top: 22px;
+    color: #fff;
+    border: none;
+
+
+}
+
+.user-login .logout-btn:hover,.user-login .logout-btn:focus,.user-login .logout-btn:active,.user-login .logout-btn.active,.user-login .logout-btn.disabled,.user-login .logout-btn[disabled]
+{
+    color: #fff;
+    background-color: #2e9ad9;
+}
+
+/*index.html 结束*/
+
+/*宿舍选择开始*/
+
+/* star 12/3 */
+.dormitory-box-title {
+    line-height: 38px;
+    border-bottom: 1px solid #dde5ee;
+}
+
+.dormitory-box-title li {
+    height: 38px;
+    width: 137px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.dormitory-box-title a {
+    line-height: 38px;
+    font-size: 14px;
+    color: #414141;
+    padding: 12px 41px 11px 40px;
+}
+
+.dormitory-box-title li a {
+    border: 1px solid #dde5ee;
+    border-radius: 1px 1px 0 0;
+    background-color: #f7f7f7;
+}
+
+.dormitory-box .dormitory-box-title a:hover,.dormitory-box .dormitory-box-title a:focus
+{
+    text-decoration: none;
+    background-color: #f7f7f7;
+    border-color: #dde5ee;
+}
+
+.dormitory-box-title .active {
+    background-color: #fff;
+}
+
+.dormitory-box-title .active:hover {
+    background-color: #fff;
+}
+
+/* end */
+.dormitory-box {
+    border: 1px solid #e0e0e0;
+    padding: 20px 19px 23px 19px;
+}
+
+/*.dormitory-title{*/
+/*font-size: 14px;*/
+/*color: #414141;*/
+/*height:37px;*/
+/*line-height:37px;*/
+/*background-color: #f7f7f7;*/
+/*border-top: 1px solid #fdfdfd;*/
+/*outline: 1px solid #dde5ee;*/
+/*margin:0 ;*/
+/*padding-left: 18px;*/
+/*}*/
+.dormitory-list {
+    border: 1px solid #dde5ee;
+    /*border-top: none;*/
+    padding: 20px 0;
+    margin: 0 -1px;
+}
+
+.dormitory-list li {
+    float: left;
+    width: 24.97%;
+    text-align: center;
+}
+
+.dormitory-list li img {
+    border: 1px solid #dde5ee;
+}
+
+.dormitory-list li p {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #414141;
+    font-size: 12px;
+}
+
+.dormitory-list li .active {
+    border: 1px solid #8ebe3a;
+}
+
+.dormitory-operation {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #dde5ee;
+}
+
+.dormitory-operation .btn {
+    background: #f5f8fc;
+    font-size: 14px;
+    width: 178px;
+    height: 37px;
+    text-align: center;
+    color: #414141;
+    box-shadow: none;
+    text-shadow: none;
+    border: 1px solid #dde5ee;
+    border-radius: 0;
+    margin: 0 5px;
+}
+
+.tips {
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.tips .tips-title {
+    color: #ff7b11;
+}
+
+.tips-content {
+    line-height: 25px;
+    margin-left: 0;
+    color: #6c6c6c;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 0;
+}
+/*宿舍选择结束*/
+
+
+/** 导航部分 **/
+.logout-btn{
+    margin-top: 0 !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px !important;
+    padding: 0;
+    line-height: 19px;
+    text-align: center;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.student-info-form{
+    margin-top: 30px;
+}
+
+.payTab{
+    margin:  0 auto;
+    width: 85%;
+    margin-bottom: 20px;
+}
+.payTotal{
+    background: #5dade2 !important;
+    color: white !important;
+    padding: 15px 0 !important;
+}
+.student-info-title{
+    padding-left: 18px;
+    line-height: 44px;
+    padding-right: 75px;
+    font-size : 16px;
+    width: 100%;
+}
+
+.student-info-title-main{
+    height: 42px;
+    margin: 10px 0;
+    font-size: 14px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px dashed #dddddd;
+    border-left: 0 none;
+}
+
+
+/** 生活用品 **/
+.artic-img{
+
+}
+.artic-name{
+    font-size: 18px;
+}
+.artic-price{
+    font-size: 18px;
+    color: #ff5400;
+}
+.article-list{
+    overflow: hidden;
+    padding: 40px 0px;
+}
+.article-list >li{
+    float: left;
+    margin-bottom: 20px;
+    border : 1px solid #afafe3 !important;
+    margin-left: 32px;
+    margin-right: 20px;
+}

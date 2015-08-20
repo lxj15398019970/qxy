@@ -1,0 +1,257 @@
+[class^="icon-"],[class*=" icon-"] {
+    display: inline-block;
+    vertical-align: text-top;
+    background-image: url(../images/global/global.png);
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -4px;
+}
+
+#siderbar [class^="icon-"],#siderbar [class*=" icon-"] {
+    width: 25px;
+    height: 25px;
+    margin: 0px 14px 0 0;
+    *margin-right: .3em;
+    line-height: 14px;
+}
+
+.icon-menu-info {
+    background-position: 0 0;
+}
+
+.icon-menu-payment {
+    background-position: -25px 0;
+}
+
+.icon-menu-dormitory {
+    background-position: -50px 0;
+}
+
+.icon-menu-clothing {
+    background-position: -75px 0;
+}
+
+.icon-menu-life {
+    background-position: -100px 0;
+}
+
+.icon-menu-phone {
+    background-position: -125px 0;
+}
+
+.icon-menu-classes {
+    background-position: -150px 0;
+}
+
+.icon-mealCard {
+    background-position: -175px 0;
+}
+
+.icon-menu-address-book {
+    background-position: -200px 0;
+}
+
+.icon-bbs {
+    background-position: -225px 0;
+}
+/* .icon-studentInfo{
+    background-position: 0 0 ;
+}
+.icon-payment{
+    background-position: -25px 0;
+}
+.icon-dormitory{
+    background-position: -50px 0;
+}
+.icon-militaryUniform{
+    background-position: -75px 0;
+}
+.icon-live{
+    background-position: -100px 0;
+}
+.icon-freephone{
+    background-position: -125px 0;
+}
+.icon-divideclasses{
+    background-position: -150px 0;
+}
+.icon-mealCard{
+    background-position: -175px 0;
+}
+.icon-addressBook{
+    background-position: -200px 0;
+}
+.icon-bbs{
+    background-position: -225px 0;
+} */
+.flow-chart {
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.flow-chart .flow-menu {
+    float: left;
+    width: 12.5%;
+    *width: 12.4%;
+    text-align: center;
+}
+/*.flow-menu >  div{*/
+    /*padding:  0 10px;*/
+/*}*/
+
+.flow-chart strong {
+    display: block;
+    color: #0b0b0b;
+    margin-top: 8px;
+}
+
+.flow-chart [class^="icon-"],.flow-chart [class*=" icon-"] {
+    display: block;
+    width: 65px;
+    height: 64px;
+    margin: 0 auto;
+    line-height: 14px;
+    background: url(../images/global/nav-sec.png) no-repeat;
+}
+
+.flow-chart .icon-info {
+    background-position: -65px 0px;
+}
+
+.flow-chart .icon-info.icon-underway {
+    background-position: -65px -65px;
+}
+
+.flow-chart .icon-info.icon-complete {
+    background-position: -65px  -64px;
+}
+
+.flow-chart .icon-payment {
+    background-position: -130px 0px;
+}
+
+.flow-chart .icon-payment.icon-underway {
+    background-position: -130px -64px;
+}
+
+.flow-chart .icon-payment.icon-complete {
+    background-position: -130px -64px;
+}
+
+
+
+.flow-chart .icon-chooseHostelType  {
+    background-position: -390px 0px;
+}
+
+.flow-chart .icon-chooseHostelType.icon-underway {
+    background-position: -390px  -64px;
+}
+
+.flow-chart .icon-chooseHostelType.icon-complete {
+    background-position: -390px  -64px;
+}
+
+
+.flow-chart .icon-dormitory {
+    background-position: -390px 0px;
+}
+
+.flow-chart .icon-dormitory.icon-underway {
+    background-position: -390px  -64px;
+}
+
+.flow-chart .icon-dormitory.icon-complete {
+    background-position: -390px  -64px;
+}
+
+.flow-chart .icon-clothing {
+    background-position: -195px 0px;
+}
+
+.flow-chart .icon-clothing.icon-underway {
+    background-position: -195px -64px;
+}
+
+.flow-chart .icon-clothing.icon-complete {
+    background-position: -195px -64px;
+}
+
+.flow-chart .icon-life {
+    background-position: -325px 0px;
+}
+
+.flow-chart .icon-life.icon-underway {
+    background-position: -325px -64px;
+}
+
+.flow-chart .icon-life.icon-complete {
+    background-position: -325px -64px;
+}
+
+.flow-chart .icon-phone {
+    background-position: -260px 0px;
+}
+
+.flow-chart .icon-phone.icon-underway {
+    background-position: -260px -64px;
+}
+
+.flow-chart .icon-phone.icon-complete {
+    background-position: -260px -64px;
+}
+
+.flow-chart .icon-classes {
+    background-position: -258px -57px;
+}
+
+.flow-chart .icon-classes.icon-underway {
+    background-position: -258px -100px;
+}
+
+.flow-chart .icon-classes.icon-complete {
+    background-position: -258px -143px;
+}
+
+.flow-chart .icon-address-book {
+    background-position: -301px -57px;
+}
+
+.flow-chart .icon-address-book.icon-underway {
+    background-position: -301px -100px;
+}
+
+.flow-chart .icon-address-book.icon-complete {
+    background-position: -301px -143px;
+}
+
+
+/** ICON **/
+.icon-gray-user-info{
+    background-position : 0 -57px;
+}
+.icon-green-user-info{
+    background-position : 0 -143px;
+}
+.icon-green-user-dormitory{
+    background-position : -86px -143px;
+}
+.icon-gray-user-dormitory{
+    background-position : -86px -57px;
+}
+
+.icon-green-user-phone{
+    background-position :-215px -143px;
+}
+.icon-gray-user-phone{
+    background-position : -215px -57px;
+}
+
+
+.icon-green--user-address{
+    background-position : -301px -143px;
+}
+.icon-gray-user-address{
+    background-position : -301px -57px;
+}

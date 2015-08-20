@@ -1,0 +1,87 @@
+
+/*分页开始*/
+.pagination {
+	font-size: 12px;
+	margin: 0;
+}
+
+.pagination a {
+	text-decoration: none;
+	border: solid 1px #e0e0e0;
+	color: #626262;
+}
+
+.pagination a,.pagination span {
+	display: block;
+	float: left;
+	padding: 7px 14px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background: #f9f9f9;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px
+		rgba(0, 0, 0, 0.05);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+}
+
+.pagination .current {
+	background: #3dacec;
+	color: #fff;
+	border: solid 1px #3dacec;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px
+		rgba(0, 0, 0, 0.05);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+}
+
+.pagination .current.prev,.pagination .current.next {
+	color: #eaeaea;
+	background: #fafafa;
+	font-weight: bold;
+	border: solid 1px #f3f3f3;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px
+		rgba(0, 0, 0, 0.05);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+}
+
+.go-pagination {
+	float: right;
+}
+
+.go-pagination a {
+	display: inline-block;
+	padding: 7px 14px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background: #f9f9f9;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.go-pagination input {
+	text-align: center;
+	display: inline-block;
+	padding: 7px 14px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background: #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	width: 20px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px
+		rgba(0, 0, 0, 0.05);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+}
+
+.go-pagination a.btn {
+	color: #333;
+}
+
+/*分页结束*/
