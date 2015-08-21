@@ -89,9 +89,12 @@
         <div id="navMenu">
             <h1 id="logo">清新源</h1>
             <ul>
-                    <li class="top-menu"><a href="${ctx}/main.action?type=user"><span>系统管理</span></a></li>
+                <li class="top-menu"><a href="${ctx}/main.action?type=user"><span>系统管理</span></a></li>
 
-                    <li class="top-menu"><a href="${ctx}/main.action?type=agent"><span>代理商管理</span></a></li>
+                <li class="top-menu"><a href="${ctx}/main.action?type=banner"><span>首页banner</span></a></li>
+                <li class="top-menu"><a href="${ctx}/main.action?type=icase"><span>经典案例</span></a></li>
+                <li class="top-menu"><a href="${ctx}/main.action?type=news"><span>新闻管理</span></a></li>
+                <li class="top-menu"><a href="${ctx}/main.action?type=company"><span>公司简介</span></a></li>
 
             </ul>
             <p class="text-right">

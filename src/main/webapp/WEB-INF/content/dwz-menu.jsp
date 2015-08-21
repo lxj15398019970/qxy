@@ -24,18 +24,65 @@
             </li>
 
 
-            <li    <c:if test="${type == 'agent'}">
+            <li    <c:if test="${type == 'banner'}">
                 class = "active"
             </c:if>
                     >
                 <a href="javascript:;" class="sider-menu">
                     <i class="icon-cogs"></i>
-                    <span class="title ">代理商管理</span>
+                    <span class="title ">banner管理</span>
 
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="${ctx}/agent/agent.action" target="navTab" rel="w_agent">代理商管理</a></li>
+                    <li><a href="${ctx}/banner/banner.action" target="navTab" rel="w_banner">banner管理</a></li>
+                </ul>
+            </li>
+
+
+            <li    <c:if test="${type == 'icase'}">
+                class = "active"
+            </c:if>
+                    >
+                <a href="javascript:;" class="sider-menu">
+                    <i class="icon-cogs"></i>
+                    <span class="title ">经典案例</span>
+
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="${ctx}/icase/icase.action" target="navTab" rel="w_icase">经典案例</a></li>
+                </ul>
+            </li>
+
+
+            <li    <c:if test="${type == 'news'}">
+                class = "active"
+            </c:if>
+                    >
+                <a href="javascript:;" class="sider-menu">
+                    <i class="icon-cogs"></i>
+                    <span class="title ">新闻管理</span>
+
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="${ctx}/news/news.action" target="navTab" rel="w_news">新闻管理</a></li>
+                </ul>
+            </li>
+
+            <li    <c:if test="${type == 'company'}">
+                class = "active"
+            </c:if>
+                    >
+                <a href="javascript:;" class="sider-menu">
+                    <i class="icon-cogs"></i>
+                    <span class="title ">公司简介</span>
+
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="${ctx}/company/company.action" target="navTab" rel="w_company">公司简介</a></li>
                 </ul>
             </li>
 
