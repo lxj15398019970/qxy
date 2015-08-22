@@ -3,21 +3,35 @@
 <div class="page">
     <div class="pageContent">
 
-        <form method="post" action="${ctx}/banner/banner!save.action" class="pageForm required-validate"
+        <form method="post" action="${ctx}/icase/icase!save.action" class="pageForm required-validate"
               onsubmit="return iframeCallback(this,dialogAjaxDone)" enctype="multipart/form-data">
             <input type="hidden" name="id" value="${id}"/>
 
             <div class="pageFormContent" layoutH="70">
 
                 <div class="unit">
-                    <label>图片名称:</label>
+                    <label>案例名称:</label>
+                    <input type="text" name="caseName" value="${caseName}">
+                </div>
+
+
+                <div class="unit">
+                    <label>案例头图:</label>
                     <c:if test="${id > 0}">
-                        <img src="${image}" width="50px" height="50px">
+                        <img src="${headImage}" width="50px" height="50px">
+                        <input type="file" name="caseImage">
                     </c:if>
 
                     <c:if test="${id == null}">
-                        <input type="file" name="bannerImage">
+                        <input type="file" name="caseImage">
                     </c:if>
+                </div>
+
+
+                <div class="unit">
+                    <label>案例内容:</label>
+                    <textarea class="editor textInput" style="width: 670px; height: 250px;"
+                              name="caseContent">${caseContent}</textarea>
                 </div>
 
             </div>

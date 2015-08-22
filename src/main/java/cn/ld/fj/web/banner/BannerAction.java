@@ -2,8 +2,10 @@ package cn.ld.fj.web.banner;
 
 import cn.ld.fj.entity.Banner;
 import cn.ld.fj.service.BannerManager;
+import cn.ld.fj.util.Config;
 import cn.ld.fj.util.DateUtil;
 import cn.ld.fj.util.DwzUtil;
+import cn.ld.fj.util.RandomCodeUtil;
 import cn.ld.fj.web.JsonActionSupport;
 import cn.ld.fj.web.SimpleJsonActionSupport;
 import net.esoar.modules.orm.Page;
@@ -36,8 +38,8 @@ public class BannerAction extends SimpleJsonActionSupport<Banner> {
     @Autowired
     private BannerManager bannerManager;
 
-    private File image;
-    private String imageFileName;
+    private File bannerImage;
+    private String bannerImageFileName;
 
     public BannerManager getBannerManager() {
         return bannerManager;
@@ -47,20 +49,20 @@ public class BannerAction extends SimpleJsonActionSupport<Banner> {
         this.bannerManager = bannerManager;
     }
 
-    public File getImage() {
-        return image;
+    public File getBannerImage() {
+        return bannerImage;
     }
 
-    public void setImage(File image) {
-        this.image = image;
+    public void setBannerImage(File bannerImage) {
+        this.bannerImage = bannerImage;
     }
 
-    public String getImageFileName() {
-        return imageFileName;
+    public String getBannerImageFileName() {
+        return bannerImageFileName;
     }
 
-    public void setImageFileName(String imageFileName) {
-        this.imageFileName = imageFileName;
+    public void setBannerImageFileName(String bannerImageFileName) {
+        this.bannerImageFileName = bannerImageFileName;
     }
 
     @Override
@@ -98,11 +100,21 @@ public class BannerAction extends SimpleJsonActionSupport<Banner> {
     @Override
     public void save() throws Exception {
 
-        String tineStr = DateUtil.getTimeStamp();
+        String tineStr = DateUtil.getTimeStamp() + RandomCodeUtil.generateNumCode(6);
         // 保存地址url
-        String url = "";
+        String url = Config.save_url;
         // 上传动作
-        FileUtils.copyFile(articleImage, new File(url));
+
+        String suffix = bannerImageFileName.substring(bannerImageFileName.lastIndexOf("."));
+
+
+        String accessUrl = Config.access_url + tineStr + suffix;
+
+        url = url + tineStr + suffix;
+
+        FileUtils.copyFile(bannerImage, new File(url));
+        entity.setImage(accessUrl);
+        bannerManager.save(entity);
 
 
         Struts2Utils.renderHtml(DwzUtil.getCloseCurrentReturn("w_banner",
