@@ -17,7 +17,7 @@
                 </li>
                 <li><a class="toolBar-btn2" href="${ctx}/icase/icase!delete.action?id={sid_user}" target="ajaxTodo"
                        title="确定要删除吗？" warn="请选择一条记录">删除</a></li>
-                <li><a class="toolBar-btn" href="${ctx}/icase/icase!input.action?id={sid_user}" target="dialog" winth="800"
+                <li><a class="toolBar-btn" href="${ctx}/icase/icase!input.action?id={sid_user}" target="dialog" width="800"
                        warn="请选择一条数据" height="600">查看/修改</a></li>
             </ul>
         </div>

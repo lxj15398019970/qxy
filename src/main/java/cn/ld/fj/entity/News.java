@@ -19,7 +19,7 @@ public class News extends IdEntity {
     private String time;
     private String content;
     private String headImage;
-    private int newsType;
+    private int newsType;  //0行业，1公司
 
     public String getTitle() {
         return title;
