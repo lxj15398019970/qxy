@@ -4,6 +4,7 @@ import cn.ld.fj.dao.BannerDao;
 import cn.ld.fj.entity.Banner;
 import net.esoar.modules.orm.Page;
 import net.esoar.modules.orm.PropertyFilter;
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,5 +44,13 @@ public class BannerManager {
 
     public void delete(Long id) {
         bannerDao.delete(id);
+    }
+
+    public List<Banner> getAllByIdDesc() {
+        String hql = "select b from Banner b order by b.id desc";
+        Query query = bannerDao.createQuery(hql);
+        query.setFirstResult(0);
+        query.setMaxResults(5);
+        return query.list();
     }
 }

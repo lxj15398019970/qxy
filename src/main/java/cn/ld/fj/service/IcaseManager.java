@@ -4,6 +4,7 @@ import cn.ld.fj.dao.IcaseDao;
 import cn.ld.fj.entity.Icase;
 import net.esoar.modules.orm.Page;
 import net.esoar.modules.orm.PropertyFilter;
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,5 +44,13 @@ public class IcaseManager {
 
     public void delete(Long id) {
         icaseDao.delete(id);
+    }
+
+    public List<Icase> findByIdDesc() {
+        String hql = "select b from Icase b order by b.id desc";
+        Query query = icaseDao.createQuery(hql);
+        query.setFirstResult(0);
+        query.setMaxResults(10);
+        return query.list();
     }
 }

@@ -82,7 +82,7 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="${ctx}/company/company.action" target="navTab" rel="w_company">公司简介</a></li>
+                    <li><a href="${ctx}/company/company!input.action" target="navTab" rel="w_company">公司简介</a></li>
                 </ul>
             </li>
 

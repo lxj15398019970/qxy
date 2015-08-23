@@ -2,18 +2,24 @@ package cn.ld.fj.web.news;
 
 import cn.ld.fj.entity.News;
 import cn.ld.fj.service.NewsManager;
+import cn.ld.fj.util.Config;
+import cn.ld.fj.util.DateUtil;
 import cn.ld.fj.util.DwzUtil;
+import cn.ld.fj.util.RandomCodeUtil;
 import cn.ld.fj.web.JsonActionSupport;
 import cn.ld.fj.web.SimpleJsonActionSupport;
 import net.esoar.modules.orm.Page;
 import net.esoar.modules.orm.PropertyFilter;
 import net.esoar.modules.utils.web.struts2.Struts2Utils;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -32,7 +38,24 @@ public class NewsAction extends SimpleJsonActionSupport<News> {
     private Page<News> page = new Page<News>(10);
     @Autowired
     private NewsManager newsManager;
+    private File newsImage;
+    private String newsImageFileName;
 
+    public File getNewsImage() {
+        return newsImage;
+    }
+
+    public void setNewsImage(File newsImage) {
+        this.newsImage = newsImage;
+    }
+
+    public String getNewsImageFileName() {
+        return newsImageFileName;
+    }
+
+    public void setNewsImageFileName(String newsImageFileName) {
+        this.newsImageFileName = newsImageFileName;
+    }
 
     @Override
     protected void prepareModel() throws Exception {
@@ -68,10 +91,26 @@ public class NewsAction extends SimpleJsonActionSupport<News> {
 
     @Override
     public void save() throws Exception {
+        if (newsImage != null) {
+            String tineStr = DateUtil.getTimeStamp() + RandomCodeUtil.generateNumCode(6);
+            // 保存地址url
+            String url = Config.save_url;
+            // 上传动作
 
-        Struts2Utils.renderHtml(DwzUtil.getCloseCurrentReturn("w_agent",
+            String suffix = newsImageFileName.substring(newsImageFileName.lastIndexOf("."));
+
+
+            String accessUrl = Config.access_url + tineStr + suffix;
+
+            url = url + tineStr + suffix;
+
+            FileUtils.copyFile(newsImage, new File(url));
+            entity.setHeadImage(accessUrl);
+        }
+        entity.setTime(DateUtil.date2str(new Date(), "yyyy-MM-dd HH:mm:ss"));
+        newsManager.save(entity);
+        Struts2Utils.renderHtml(DwzUtil.getCloseCurrentReturn("w_news",
                 "操作成功"));
-
 
     }
 
@@ -81,7 +120,7 @@ public class NewsAction extends SimpleJsonActionSupport<News> {
         newsManager.delete(id);
 
 
-        Struts2Utils.renderHtml(DwzUtil.getNavtabReturn("w_agent",
+        Struts2Utils.renderHtml(DwzUtil.getNavtabReturn("w_news",
                 "操作成功"));
 
     }

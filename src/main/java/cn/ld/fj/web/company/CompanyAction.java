@@ -2,18 +2,23 @@ package cn.ld.fj.web.company;
 
 import cn.ld.fj.entity.Company;
 import cn.ld.fj.service.CompanyManager;
+import cn.ld.fj.util.Config;
+import cn.ld.fj.util.DateUtil;
 import cn.ld.fj.util.DwzUtil;
+import cn.ld.fj.util.RandomCodeUtil;
 import cn.ld.fj.web.JsonActionSupport;
 import cn.ld.fj.web.SimpleJsonActionSupport;
 import net.esoar.modules.orm.Page;
 import net.esoar.modules.orm.PropertyFilter;
 import net.esoar.modules.utils.web.struts2.Struts2Utils;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -33,14 +38,42 @@ public class CompanyAction extends SimpleJsonActionSupport<Company> {
     @Autowired
     private CompanyManager companyManager;
 
+    private File companyImage;
+    private String companyImageFileName;
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public File getCompanyImage() {
+        return companyImage;
+    }
+
+    public void setCompanyImage(File companyImage) {
+        this.companyImage = companyImage;
+    }
+
+    public String getCompanyImageFileName() {
+        return companyImageFileName;
+    }
+
+    public void setCompanyImageFileName(String companyImageFileName) {
+        this.companyImageFileName = companyImageFileName;
+    }
 
     @Override
     protected void prepareModel() throws Exception {
-        if (id != null) {
+        if (entity != null) {
             entity = companyManager.getEntity(id);
         } else {
             entity = new Company();
         }
+
     }
 
     // -- CRUD Action 函数 --//
@@ -63,15 +96,34 @@ public class CompanyAction extends SimpleJsonActionSupport<Company> {
 
     @Override
     public String input() throws Exception {
+        List<Company> companies = companyManager.getAll();
+        if (CollectionUtils.isNotEmpty(companies)) {
+            company = companies.get(0);
+        }
         return INPUT;
     }
 
     @Override
     public void save() throws Exception {
+        if (companyImage != null) {
+            String tineStr = DateUtil.getTimeStamp() + RandomCodeUtil.generateNumCode(6);
+            // 保存地址url
+            String url = Config.save_url;
+            // 上传动作
 
-        Struts2Utils.renderHtml(DwzUtil.getCloseCurrentReturn("w_agent",
+            String suffix = companyImageFileName.substring(companyImageFileName.lastIndexOf("."));
+
+
+            String accessUrl = Config.access_url + tineStr + suffix;
+
+            url = url + tineStr + suffix;
+
+            FileUtils.copyFile(companyImage, new File(url));
+            entity.setHeadImage(accessUrl);
+        }
+        companyManager.save(entity);
+        Struts2Utils.renderHtml(DwzUtil.getNavtabReturn("w_company",
                 "操作成功"));
-
 
     }
 
@@ -81,7 +133,7 @@ public class CompanyAction extends SimpleJsonActionSupport<Company> {
         companyManager.delete(id);
 
 
-        Struts2Utils.renderHtml(DwzUtil.getNavtabReturn("w_agent",
+        Struts2Utils.renderHtml(DwzUtil.getNavtabReturn("w_company",
                 "操作成功"));
 
     }

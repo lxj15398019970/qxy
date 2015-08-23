@@ -3,42 +3,28 @@
 <div class="page">
     <div class="pageContent">
 
-        <form method="post" action="${ctx}/news/news!save.action" class="pageForm required-validate"
+        <form method="post" action="${ctx}/company/company!save.action" class="pageForm required-validate"
               onsubmit="return iframeCallback(this,dialogAjaxDone)" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="${id}"/>
+            <input type="hidden" name="id" value="${company.id}"/>
 
             <div class="pageFormContent" layoutH="70">
-                <div class="unit">
-                    <label>新闻标题:</label>
-                    <input type="text" name="title" value="${title}">
-                </div>
-
-                <div class="unit">
-                    <label>新闻类型:</label>
-                    <select name="newsType">
-                        <option value="0" <c:if test="${newsType==0}">selected</c:if>>行业新闻</option>
-                        <option value="1" <c:if test="${newsType==1}">selected</c:if>>公司新闻</option>
-
-                    </select>
-                </div>
-
 
                 <div class="unit">
                     <label>头图:</label>
-                    <c:if test="${id > 0}">
-                        <img src="${headImage}" width="50px" height="50px">
-                        <input type="file" name="newsImage">
+                    <c:if test="${company.id > 0}">
+                        <img src="${company.headImage}" width="50px" height="50px">
+                        <input type="file" name="companyImage">
                     </c:if>
 
-                    <c:if test="${id == null}">
-                        <input type="file" name="newsImage">
+                    <c:if test="${company == null}">
+                        <input type="file" name="companyImage">
                     </c:if>
                 </div>
 
                 <div class="unit">
                     <label>新闻内容:</label>
-                    <textarea class="editor textInput" style="width: 670px; height: 250px;"
-                              name="content">${content}</textarea>
+                    <textarea class="editor textInput" style="width: 800px; height: 400px;"
+                              name="detail">${company.detail}</textarea>
                 </div>
 
 

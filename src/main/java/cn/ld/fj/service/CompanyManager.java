@@ -44,4 +44,8 @@ public class CompanyManager {
     public void delete(Long id) {
         companyDao.delete(id);
     }
+
+    public List<Company> getAll() {
+        return companyDao.getAll();
+    }
 }
