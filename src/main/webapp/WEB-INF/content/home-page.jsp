@@ -182,9 +182,9 @@
     <div class="Home_right">
 
         <!--滚动公告 End-->
-        <div class="">
+        <div >
             <div class="hd"> 关于我们</div>
-            <div class="">
+            <div  style="border-top:1px solid #000">
                 ${company.detail}
             </div>
             <div>
