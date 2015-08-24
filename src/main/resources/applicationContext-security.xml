@@ -12,7 +12,7 @@
         <s:intercept-url pattern="/themes/**" filters="none"/>
         <s:intercept-url pattern="/xheditor/**" filters="none"/>
         <s:intercept-url pattern="/javascripts/**" filters="none"/>
-        <s:intercept-url pattern="/homePage.action" filters="none"/>
+        <s:intercept-url pattern="/home-page.action" filters="none"/>
 
         <s:intercept-url pattern="/index.action" access="hasAnyRole('ROLE_登陆系统')"/>
         <s:intercept-url pattern="/agent.action" access="hasAnyRole('ROLE_登陆系统')"/>

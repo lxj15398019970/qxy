@@ -2,9 +2,11 @@ package cn.ld.fj.entity;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Created by xjli on 15-8-21.
@@ -16,6 +18,17 @@ import javax.persistence.Table;
 public class Company extends IdEntity {
     private String detail;
     private String headImage;
+    private String url;
+
+
+    @Transient
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String getDetail() {
         return detail;

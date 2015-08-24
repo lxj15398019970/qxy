@@ -5,6 +5,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Created by xjli on 15-8-21.
@@ -20,6 +21,16 @@ public class News extends IdEntity {
     private String content;
     private String headImage;
     private int newsType;  //0行业，1公司
+    private String url;
+
+    @Transient
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String getTitle() {
         return title;

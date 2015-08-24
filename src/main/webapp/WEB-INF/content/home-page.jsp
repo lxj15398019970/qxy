@@ -13,33 +13,15 @@
 <body>
 
 <!---头部开始-->
-<div class="header">
-    <div class="headCon">
-        <div class="head">
-            <div class="logo"><a href="${ctx}/homePage.action"></a></div>
-
-            <div class="mainnav">
-                <ul>
-                    <li><a href="${ctx}/home-page.action" id="mainnav1"><em>首页</em></a></li>
-                    <li><a href='/gysj/index_13.aspx' id="mainnav2"><em>关于清新源</em></a></li>
-                    <li><a href='/xwzx/list_21.aspx' id="mainnav4"><em>新闻中心</em></a></li>
-                    <li><a href='/rlzy/index_37.aspx' id="mainnav6"><em>经典案例</em></a></li>
-                    <li><a href='/lxwm/index_45.aspx' id="mainnav7"><em>联系我们</em></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<%@include file="/static2/common/banner.jsp" %>
 <!---头部结束-->
-
-
 <!--banner Start-->
 <div class="banner">
     <div id="cssbox">
         <ul id="ulid">
             <c:forEach items="${bannerList}" var="item">
                 <li>
-                    <img src="${item.image}" style="width:1000px; height:350px;vertical-align: middle;display: block">
+                    <img src="${item.image}" style="width:1000px;height:350px;vertical-align:middle">
                 </li>
 
             </c:forEach>
@@ -96,8 +78,8 @@
                         <c:forEach items="${allNews}" var="item">
 
                             <li>
-                                <a href='/xwzx/info_70.aspx?itemid=7085'><img src="${item.headImage}"></a>
-                                <em><a href='/xwzx/info_70.aspx?itemid=7085'>${item.title}</a></em>
+                                <a href="${item.url}"><img src="${item.headImage}"></a>
+                                <em><a href="${item.url}">${item.title}</a></em>
                             </li>
                         </c:forEach>
                     </ul>
@@ -130,7 +112,7 @@
             <div class="title">
 
                 <h2>
-                    <a href='/xwzx/list_21.aspx'>更多>></a>
+                    <a href="${ctx}/home-page!more.action">更多>></a>
                     <span id="titlebtn1"></span>
                     <span id="titlebtn2"></span>
                 </h2>
@@ -140,12 +122,10 @@
             <div class="reg" name="AutoContent">
                 <div style="display: none;">
                     <ul>
-
-
-                        <c:forEach items="${ynNews}" var="item">
+                        <c:forEach items="${gsNews}" var="item">
 
                             <li><span>${item.time}</span><a
-                                    href='/xwzx/info_21.aspx?itemid=7099'>${item.title}</a></li>
+                                    href="${item.url}">${item.title}</a></li>
 
                         </c:forEach>
 
@@ -155,10 +135,10 @@
                 <div style="display: block;">
                     <ul>
 
-                        <c:forEach items="${gsNews}" var="item">
+                        <c:forEach items="${ynNews}" var="item">
 
                             <li><span>${item.time}</span><a
-                                    href='/xwzx/info_21.aspx?itemid=7099'>${item.title}</a></li>
+                                    href="${item.url}">${item.title}</a></li>
 
                         </c:forEach>
 
@@ -171,23 +151,20 @@
         <div class="clear"></div>
 
         <div class="Home_project">
+            <em></em>
+
             <div class="imgscroll">
                 <div class="hd"></div>
                 <div class="bd">
                     <ul>
-
                         <c:forEach items="${cases}" var="item">
-
-
                             <li>
-                                <a href="/qxcy/info_18.aspx?itemid=1845&lcid=7&id=6"><img class="diapo" border="0"
+                                <a href="${item.url}"><img class="diapo" border="0"
                                                                                           src="${item.headImage}"></a>
 
-                                <p><a href="/qxcy/info_18.aspx?itemid=1845&lcid=7&id=6">${item.caseName}</a></p>
+                                <p><a href="${item.url}">${item.caseName}</a></p>
                             </li>
                         </c:forEach>
-
-
                     </ul>
                 </div>
             </div>
@@ -210,18 +187,19 @@
             <div class="bd">
                 ${company.detail}
             </div>
-            <a href='/xwzx/list_21.aspx'>更多>></a>
+            <a href="${company.url}">更多>></a>
         </div>
 
     </div>
     <!--Home_right End-->
 </div>
 
+
 <!--foot Start-->
-<div class="footWrap">
-    <div class="foot">
-    </div>
-</div>
+<%--<div class="footWrap">--%>
+    <%--<div class="foot">--%>
+    <%--</div>--%>
+<%--</div>--%>
 <!--foot End-->
 
 <!--弹出框 End-->

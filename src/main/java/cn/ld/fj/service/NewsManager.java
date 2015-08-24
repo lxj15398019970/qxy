@@ -61,4 +61,9 @@ public class NewsManager {
         query.setFirstResult(0);
         return query.list();
     }
+
+    public List<News> findAllNews(int i) {
+        String hql = "select n from News n where n.newsType=? order by n.id desc";
+        return newsDao.find(hql, i);
+    }
 }

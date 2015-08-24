@@ -407,6 +407,7 @@ a:hover {
     clear: both;
     overflow: hidden;
     position: relative;
+    text-align: center;
 }
 
 .banner #ulid li {

@@ -5,9 +5,11 @@ import cn.ld.fj.service.BannerManager;
 import cn.ld.fj.service.CompanyManager;
 import cn.ld.fj.service.IcaseManager;
 import cn.ld.fj.service.NewsManager;
+import cn.ld.fj.util.Config;
 import cn.ld.fj.util.DwzUtil;
 import com.google.common.collect.Lists;
 import net.esoar.modules.utils.web.struts2.Struts2Utils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,43 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
     private List<News> gsNews = Lists.newArrayList();
     private List<News> ynNews = Lists.newArrayList();
     private List<News> allNews = Lists.newArrayList();
+    private News news;
+    private Icase icase;
+
+    public Icase getIcase() {
+        return icase;
+    }
+
+    public void setIcase(Icase icase) {
+        this.icase = icase;
+    }
+
+    private String type;
+    private long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public News getNews() {
+        return news;
+    }
+
+    public void setNews(News news) {
+        this.news = news;
+    }
 
     public List<News> getAllNews() {
         return allNews;
@@ -106,15 +145,35 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
             company = companys.get(0);
             if (company.getDetail().length() > 100) {
                 company.setDetail(company.getDetail().substring(0, 100) + "...");
+
             }
+            company.setUrl(Config.baseUrl + company.getId() + "&type=company");
         }
         ynNews = newsManager.findByType(0);
+        dealUrl(ynNews);
         gsNews = newsManager.findByType(1);
+        dealUrl(gsNews);
         cases = icaseManager.findByIdDesc();
+        dealCaseUrl(cases);
         allNews = newsManager.findByAll();
+        dealUrl(allNews);
 
         return SUCCESS;
     }
+
+
+    private void dealCaseUrl(List<Icase> cases) {
+        for (Icase icase : cases) {
+            icase.setUrl(Config.baseUrl + icase.getId() + "&type=case");
+        }
+    }
+
+    private void dealUrl(List<News> allNews) {
+        for (News news : allNews) {
+            news.setUrl(Config.baseUrl + news.getId() + "&type=news");
+        }
+    }
+
 
     @Override
     public String input() throws Exception {
@@ -127,7 +186,58 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
         Struts2Utils.renderHtml(DwzUtil.getCloseCurrentReturn("w_agent",
                 "操作成功"));
 
+    }
 
+
+    public String more() throws Exception {
+        if (StringUtils.isBlank(type)) {
+            type = "1";
+        }
+        gsNews = newsManager.findAllNews(Integer.parseInt(type));
+        dealUrl(gsNews);
+        bannerList = bannerManager.getAllByIdDesc();
+
+
+        return "more";
+    }
+
+
+    public String one() throws Exception {
+        bannerList = bannerManager.getAllByIdDesc();
+        if ("news".equals(type)) {
+            news = newsManager.getEntity(id);
+            return "news";
+        } else if ("case".equals(type)) {
+            icase = icaseManager.getEntity(id);
+            return "icase";
+        } else if ("company".equals(type)) {
+            List<Company> companys = companyManager.getAll();
+            if (!CollectionUtils.isEmpty(companys)) {
+                company = companys.get(0);
+            }
+            return "company";
+        }
+
+        return "news";
+    }
+
+    public String moreCase() throws Exception {
+
+        bannerList = bannerManager.getAllByIdDesc();
+        cases = icaseManager.findAllByIdDesc();
+        dealCaseUrl(cases);
+
+        return "more-case";
+    }
+
+
+    public String contact() {
+        List<Company> companys = companyManager.getAll();
+        if (!CollectionUtils.isEmpty(companys)) {
+            company = companys.get(0);
+        }
+        bannerList = bannerManager.getAllByIdDesc();
+        return "contact";
     }
 
 

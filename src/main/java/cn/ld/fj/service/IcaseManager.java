@@ -53,4 +53,9 @@ public class IcaseManager {
         query.setMaxResults(10);
         return query.list();
     }
+
+    public List<Icase> findAllByIdDesc() {
+        String hql = "select b from Icase b order by b.id desc";
+        return icaseDao.find(hql);
+    }
 }
