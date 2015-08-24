@@ -14,57 +14,6 @@
 
 <!---头部开始-->
 <%@include file="/static2/common/banner.jsp" %>
-<!---头部结束-->
-<!--banner Start-->
-<div class="banner">
-    <div id="cssbox">
-        <ul id="ulid">
-            <c:forEach items="${bannerList}" var="item">
-                <li>
-                    <img src="${item.image}" style="width:1000px;height:350px;vertical-align:middle">
-                </li>
-
-            </c:forEach>
-
-        </ul>
-    </div>
-    <div class="tab_ul">
-        <ul id="tabulid">
-
-            <li></li>
-
-            <li></li>
-
-            <li></li>
-
-            <li></li>
-
-            <li></li>
-
-
-        </ul>
-    </div>
-    <script type="text/javascript">
-        var width = jQuery("body").width();
-        new Marquee(
-                {
-                    MSClassID: "cssbox",
-                    ContentID: "ulid",
-                    TabID: "tabulid",
-                    Direction: 0,
-                    Step: 0.3,
-                    Width: width,
-                    Height: 350,
-                    Timer: 20,
-                    DelayTime: 5000,
-                    WaitTime: 0,
-                    ScrollStep: 200,
-                    SwitchType: 2,
-                    AutoStart: 1
-                });
-    </script>
-</div>
-<!--banner End-->
 
 <!--main Start-->
 <div class="main">
