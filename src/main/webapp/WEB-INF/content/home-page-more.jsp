@@ -60,19 +60,7 @@
 
 
 </div>
-
-<!--contain End-->
-
-<div class="containboot"></div>
-
-
-<!--foot Start-->
-<div class="footWrap">
-    <div class="foot">
-    </div>
-</div>
-<!--foot End-->
-
+<%@include file="/static2/common/foot.jsp" %>
 <!--弹出框 End-->
 <script type="text/javascript">
     jQuery(".Imglist a.a1").click(function () {

@@ -131,9 +131,9 @@
     <div class="Home_right">
 
         <!--滚动公告 End-->
-        <div >
+        <div>
             <div class="hd"> 关于我们</div>
-            <div  style="border-top:1px solid #000">
+            <div style="border-top:1px solid #000">
                 ${company.detail}
             </div>
             <div>
@@ -142,15 +142,9 @@
         </div>
 
     </div>
-    <!--Home_right End-->
 </div>
 
-<!--foot Start-->
-<%--<div class="footWrap">--%>
-    <%--<div class="foot">--%>
-    <%--</div>--%>
-<%--</div>--%>
-<!--foot End-->
+<%@include file="/static2/common/foot.jsp" %>
 
 <!--弹出框 End-->
 <script type="text/javascript">
