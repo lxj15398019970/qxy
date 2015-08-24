@@ -160,7 +160,7 @@
                         <c:forEach items="${cases}" var="item">
                             <li>
                                 <a href="${item.url}"><img class="diapo" border="0"
-                                                                                          src="${item.headImage}"></a>
+                                                           src="${item.headImage}"></a>
 
                                 <p><a href="${item.url}">${item.caseName}</a></p>
                             </li>
@@ -182,18 +182,19 @@
     <div class="Home_right">
 
         <!--滚动公告 End-->
-        <div class="Home_placar">
+        <div class="">
             <div class="hd"> 关于我们</div>
-            <div class="bd">
+            <div class="">
                 ${company.detail}
             </div>
-            <a href="${company.url}">更多>></a>
+            <div>
+                <a href="${company.url}">更多>></a>
+            </div>
         </div>
 
     </div>
     <!--Home_right End-->
 </div>
-
 
 <!--foot Start-->
 <%--<div class="footWrap">--%>

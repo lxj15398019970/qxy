@@ -86,7 +86,7 @@
 
         <!--newsInfo Start-->
         <div class="newsInfo">
-            <img width="799" border="0" height="600" src="${company.headImage}" style="width:521px;height:530px;">
+            <img width="799" border="0" height="600" src="${ctx}/static2/images/ditu.png" style="width:800px;height:530px;">
 
             <div class="Info_txt">
                 <p> 地址：喀什市南湖路（阳光小区）商业街6-117、6-217、6-218</p>
