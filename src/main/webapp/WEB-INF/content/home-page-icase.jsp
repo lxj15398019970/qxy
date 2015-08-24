@@ -88,7 +88,7 @@
         <!--newsInfo Start-->
         <div class="newsInfo">
             <h1 class="Info_title">${icase.caseName}</h1>
-            <img width="799" border="0" height="600" src="${icase.headImage}" style="width:521px;height:530px;">
+            <img width="799" border="0" height="600" src="${icase.headImage}" style="width:700px;height:450px;">
 
             <div class="Info_txt">
 

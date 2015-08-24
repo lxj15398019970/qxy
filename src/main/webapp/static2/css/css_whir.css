@@ -191,7 +191,6 @@ a:hover {
 .content {
     float: right;
     width: 790px;
-    background: url(../images/currentbg.jpg) repeat-x left top;
     margin-right: 10px;
 }
 
@@ -210,7 +209,6 @@ a:hover {
 .header {
     width: 100%;
     height: 109px;
-    border-top: 4px solid #b71c22;
 }
 
 .header .headCon {
@@ -1494,7 +1492,6 @@ a:hover {
     padding: 25px 21px 0 21px;
     height: 190px;
     overflow: hidden;
-    background: url(../images/Honor_libg.jpg) repeat-x left top;
 }
 
 .honor li img {
