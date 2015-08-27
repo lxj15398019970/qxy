@@ -212,7 +212,6 @@ a:hover {
 }
 
 .header .headCon {
-    width: 1440px;
     height: 109px;
     margin: 0 auto;
     position: relative;
@@ -242,11 +241,14 @@ a:hover {
 
 .head .logo {
     position: absolute;
-    top: 32px;
-    width: 246px;
-    height: 80px;
-    background: url(../images/logo.png) no-repeat left top;
+    top: 40px;
+    width: 615px;
+    height: 77px;
+    background: url('../images/logo.png') no-repeat;
+    -webkit-background-size: 60% auto;
+    background-size: 60% auto;
 }
+
 
 .head .logo a {
     display: block;
@@ -258,13 +260,14 @@ a:hover {
     position: absolute;
     top: 45px;
     right: 0px;
-    width: 720px;
+    width: 650px;
     height: 240px;
     overflow: hidden;
+    text-align: right;
 }
 
 .mainnav li {
-    float: left;
+    display: inline-block;
     height: auto;
 }
 
@@ -1097,7 +1100,7 @@ a:hover {
 }
 
 .sidebar ul {
-    width: 173px;
+    width: 154px;
     height: auto;
     margin-left: 12px;
 }

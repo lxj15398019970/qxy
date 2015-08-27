@@ -2,7 +2,7 @@
 <div class="header">
     <div class="headCon">
         <div class="head">
-            <div class="logo"><a href="${ctx}/home-page.action"></a></div>
+            <a href="${ctx}/home-page.action" class="logo"></a>
 
             <div class="mainnav">
                 <ul>

@@ -19,9 +19,9 @@
         <s:intercept-url pattern="/user.action" access="hasAnyRole('ROLE_登陆系统')"/>
         <s:intercept-url pattern="/role.action" access="hasAnyRole('ROLE_登陆系统')"/>
 
-        <s:form-login login-page="/login.action" default-target-url="/"
+        <s:form-login login-page="/login.action" default-target-url="/index.action"
                       authentication-failure-url="/login.action?error=true"/>
-        <s:logout logout-success-url="/"/>
+        <s:logout logout-success-url="/login.action"/>
     </s:http>
 
     <!-- 认证配置, 使用userDetailsService提供的用户信息 -->
