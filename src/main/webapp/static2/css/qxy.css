@@ -267,23 +267,27 @@ a:hover {
 
 .mainnav li {
     display: inline-block;
-    height: auto;
+    height: 24px;
 }
 
 .mainnav li a {
     display: block;
     height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    font-family: "微软雅黑"
+
 }
 
-.mainnav li a:hover, .mainnav li a.aon {
-    height: 24px;
-    overflow: hidden;
+.mainnav li a:hover,
+.mainnav li a.aon {
+    color: green;
 }
 
 .mainnav li a em {
-    display: block;
-    font-size: 17px;
-    font-family: "微软雅黑"
+    /*display: block;*/
+    /*font-size: 17px;*/
+    /*font-family: "微软雅黑"*/
 }
 
 #mainnav1 {
