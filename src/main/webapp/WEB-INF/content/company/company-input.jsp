@@ -5,18 +5,18 @@
 
         <form method="post" action="${ctx}/company/company!save.action" class="pageForm required-validate"
               onsubmit="return iframeCallback(this,dialogAjaxDone)" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="${company.id}"/>
+            <input type="hidden" name="id" value="${id}"/>
 
             <div class="pageFormContent" layoutH="70">
 
                 <div class="unit">
                     <label>头图:</label>
-                    <c:if test="${company.id > 0}">
-                        <img src="${company.headImage}" width="50px" height="50px">
+                    <c:if test="${id > 0}">
+                        <img src="${headImage}" width="50px" height="50px">
                         <input type="file" name="companyImage">
                     </c:if>
 
-                    <c:if test="${company == null}">
+                    <c:if test="${id == 0}">
                         <input type="file" name="companyImage">
                     </c:if>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="unit">
                     <label>新闻内容:</label>
                     <textarea class="editor textInput" style="width: 800px; height: 400px;"
-                              name="detail">${company.detail}</textarea>
+                              name="detail">${detail}</textarea>
                 </div>
 
 

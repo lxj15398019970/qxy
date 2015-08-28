@@ -40,15 +40,6 @@ public class CompanyAction extends SimpleJsonActionSupport<Company> {
 
     private File companyImage;
     private String companyImageFileName;
-    private Company company;
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
 
     public File getCompanyImage() {
         return companyImage;
@@ -68,7 +59,7 @@ public class CompanyAction extends SimpleJsonActionSupport<Company> {
 
     @Override
     protected void prepareModel() throws Exception {
-        if (entity != null) {
+        if (id != null) {
             entity = companyManager.getEntity(id);
         } else {
             entity = new Company();
@@ -90,18 +81,14 @@ public class CompanyAction extends SimpleJsonActionSupport<Company> {
             page.setOrder(Page.ASC);
         }
         page = companyManager.searchList(page, filters);
-
         return SUCCESS;
     }
 
     @Override
     public String input() throws Exception {
-        List<Company> companies = companyManager.getAll();
-        if (CollectionUtils.isNotEmpty(companies)) {
-            company = companies.get(0);
-        }
         return INPUT;
     }
+
 
     @Override
     public void save() throws Exception {
@@ -122,7 +109,7 @@ public class CompanyAction extends SimpleJsonActionSupport<Company> {
             entity.setHeadImage(accessUrl);
         }
         companyManager.save(entity);
-        Struts2Utils.renderHtml(DwzUtil.getNavtabReturn("w_company",
+        Struts2Utils.renderHtml(DwzUtil.getCloseCurrentReturn("w_company",
                 "操作成功"));
 
     }
