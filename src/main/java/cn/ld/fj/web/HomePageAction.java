@@ -48,6 +48,25 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
     private News news;
     private Icase icase;
 
+    private String cdetail;
+    private String curl;
+
+    public String getCdetail() {
+        return cdetail;
+    }
+
+    public void setCdetail(String cdetail) {
+        this.cdetail = cdetail;
+    }
+
+    public String getCurl() {
+        return curl;
+    }
+
+    public void setCurl(String curl) {
+        this.curl = curl;
+    }
+
     public Icase getIcase() {
         return icase;
     }
@@ -144,10 +163,10 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
         if (!CollectionUtils.isEmpty(companys)) {
             company = companys.get(0);
             if (company.getDetail().length() > 100) {
-                company.setDetail(company.getDetail().substring(0, 100) + "...");
+                cdetail = company.getDetail().substring(0, 100) + "...";
 
             }
-            company.setUrl(Config.baseUrl + company.getId() + "&type=company");
+            curl = Config.baseUrl + company.getId() + "&type=company";
         }
         ynNews = newsManager.findByType(0);
         dealUrl(ynNews);

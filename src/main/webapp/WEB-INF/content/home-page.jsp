@@ -134,10 +134,10 @@
         <div>
             <div class="hd"> 关于我们</div>
             <div style="border-top:1px solid #000">
-                ${company.detail}
+                ${cdetail}
             </div>
             <div>
-                <a href="${company.url}">更多>></a>
+                <a href="${curl}">更多>></a>
             </div>
         </div>
 
