@@ -12,12 +12,16 @@
         <s:intercept-url pattern="/themes/**" filters="none"/>
         <s:intercept-url pattern="/xheditor/**" filters="none"/>
         <s:intercept-url pattern="/javascripts/**" filters="none"/>
-        <s:intercept-url pattern="/home-page.action" filters="none"/>
+        <s:intercept-url pattern="*/*home-page*.action*" filters="none"/>
+        <!--<s:intercept-url pattern="/home-page!one*" filters="none"/>-->
 
         <s:intercept-url pattern="/index.action" access="hasAnyRole('ROLE_登陆系统')"/>
-        <s:intercept-url pattern="/agent.action" access="hasAnyRole('ROLE_登陆系统')"/>
         <s:intercept-url pattern="/user.action" access="hasAnyRole('ROLE_登陆系统')"/>
         <s:intercept-url pattern="/role.action" access="hasAnyRole('ROLE_登陆系统')"/>
+        <s:intercept-url pattern="/banner.action" access="hasAnyRole('ROLE_登陆系统')"/>
+        <s:intercept-url pattern="/icase.action" access="hasAnyRole('ROLE_登陆系统')"/>
+        <s:intercept-url pattern="/news.action" access="hasAnyRole('ROLE_登陆系统')"/>
+        <s:intercept-url pattern="/company.action" access="hasAnyRole('ROLE_登陆系统')"/>
 
         <s:form-login login-page="/login.action" default-target-url="/index.action"
                       authentication-failure-url="/login.action?error=true"/>

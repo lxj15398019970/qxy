@@ -34,7 +34,7 @@
 
         <!--newsInfo Start-->
         <div class="newsInfo">
-            <img width="799" border="0" height="600" src="${company.headImage}" style="width:521px;height:530px;">
+            <img src="${company.headImage}" style="width:600px;height:450px;">
 
             <div class="Info_txt">
                 ${company.detail}
