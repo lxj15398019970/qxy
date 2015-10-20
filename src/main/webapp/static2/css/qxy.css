@@ -245,8 +245,11 @@ a:hover {
     width: 615px;
     height: 77px;
     background: url('../images/logo.png') no-repeat;
-    -webkit-background-size: 60% auto;
-    background-size: 60% auto;
+    /*-webkit-background-size: 60% auto;*/
+    /*background-size: 60% auto;*/
+    /*-o-background-size: 60% auto;*/
+    /*-moz-background-size: 60% auto;*/
+    /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/logo.png', sizingMethod='scale');*/
 }
 
 .head .logo a {
