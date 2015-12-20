@@ -95,6 +95,7 @@
                 <li class="top-menu"><a href="${ctx}/main.action?type=icase"><span>经典案例</span></a></li>
                 <li class="top-menu"><a href="${ctx}/main.action?type=news"><span>新闻管理</span></a></li>
                 <li class="top-menu"><a href="${ctx}/main.action?type=company"><span>公司简介</span></a></li>
+                <li class="top-menu"><a href="${ctx}/main.action?type=partner"><span>合作单位</span></a></li>
 
             </ul>
             <p class="text-right">

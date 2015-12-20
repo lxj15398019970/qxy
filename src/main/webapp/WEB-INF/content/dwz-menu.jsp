@@ -86,6 +86,21 @@
                 </ul>
             </li>
 
+            <li    <c:if test="${type == 'partner'}">
+                class = "active"
+            </c:if>
+                    >
+                <a href="javascript:;" class="sider-menu">
+                    <i class="icon-cogs"></i>
+                    <span class="title ">合作单位</span>
+
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="${ctx}/partner/partner.action" target="navTab" rel="w_partner">合作单位</a></li>
+                </ul>
+            </li>
+
 
         </ul>
 

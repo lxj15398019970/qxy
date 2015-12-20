@@ -10,6 +10,7 @@
                     <li><a href="${ctx}/home-page!one.action?type=company" id="mainnav2"><em>关于清新源</em></a></li>
                     <li><a href="${ctx}/home-page!more.action" id="mainnav3"><em>新闻中心</em></a></li>
                     <li><a href="${ctx}/home-page!moreCase.action" id="mainnav4"><em>经典案例</em></a></li>
+                    <li><a href="${ctx}/home-page!morePartner.action" id="mainnav6"><em>合作单位</em></a></li>
                     <li><a href="${ctx}/home-page!contact.action" id="mainnav5"><em>联系我们</em></a></li>
                 </ul>
             </div>

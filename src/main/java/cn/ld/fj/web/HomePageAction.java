@@ -1,10 +1,7 @@
 package cn.ld.fj.web;
 
 import cn.ld.fj.entity.*;
-import cn.ld.fj.service.BannerManager;
-import cn.ld.fj.service.CompanyManager;
-import cn.ld.fj.service.IcaseManager;
-import cn.ld.fj.service.NewsManager;
+import cn.ld.fj.service.*;
 import cn.ld.fj.util.Config;
 import cn.ld.fj.util.DwzUtil;
 import com.google.common.collect.Lists;
@@ -38,6 +35,8 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
     private IcaseManager icaseManager;
     @Autowired
     private CompanyManager companyManager;
+    @Autowired
+    private PartnerManager partnerManager;
 
 
     private Company company;
@@ -45,8 +44,10 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
     private List<News> gsNews = Lists.newArrayList();
     private List<News> ynNews = Lists.newArrayList();
     private List<News> allNews = Lists.newArrayList();
+    private List<Partner> partners = Lists.newArrayList();
     private News news;
     private Icase icase;
+    private Partner partner;
 
     private String cdetail;
     private String curl;
@@ -150,6 +151,22 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
         this.bannerList = bannerList;
     }
 
+    public Partner getPartner() {
+        return partner;
+    }
+
+    public void setPartner(Partner partner) {
+        this.partner = partner;
+    }
+
+    public List<Partner> getPartners() {
+        return partners;
+    }
+
+    public void setPartners(List<Partner> partners) {
+        this.partners = partners;
+    }
+
     @Override
     protected void prepareModel() throws Exception {
 
@@ -235,6 +252,9 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
                 company = companys.get(0);
             }
             return "company";
+        } else if ("partner".equals(type)) {
+            partner = partnerManager.getEntity(id);
+            return "partner";
         }
 
         return "news";
@@ -257,6 +277,19 @@ public class HomePageAction extends SimpleJsonActionSupport<Agent> {
         }
         bannerList = bannerManager.getAllByIdDesc();
         return "contact";
+    }
+
+    public String morePartner() {
+        bannerList = bannerManager.getAllByIdDesc();
+        partners = partnerManager.findAll();
+        dealPartnersUrl(partners);
+        return "more-partner";
+    }
+
+    private void dealPartnersUrl(List<Partner> partners) {
+        for (Partner partner : partners) {
+            partner.setUrl(Config.baseUrl + partner.getId() + "&type=partner");
+        }
     }
 
 
